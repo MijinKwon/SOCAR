@@ -9,10 +9,13 @@ def calculate_AUROC(geneOption):
     y_scores = [float(score) for drug, score in sorted(dicDrugScore.items(), key=operator.itemgetter(0))]
 
     auroc_macro = roc_auc_score(y_true,y_scores,'macro')
-
     print ('the number of test drugs: ',len(y_true))
     print ('the number of gold standard drugs: ',sum(y_true))
     print ('AUROC: ',round(auroc_macro,2))
+    
+    fAUROC = open('./model_evaluation/%s_AUROC.txt'%geneOption,'w+',encoding='UTF8')
+    fAUROC.write(str(auroc_macro))
+    fAUROC.close()
 
 def predict_sensitization_mechanisms():
     print ('\n......predicting_sensitization_mechanisms')
