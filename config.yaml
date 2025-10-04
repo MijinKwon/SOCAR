@@ -1,0 +1,34 @@
+data:
+  degs: "input_data/DEGs.txt"
+  network: "input_data/regulatory_signaling_network.txt"
+  drug_targets: "input_data/drug_target_associations.txt"
+  gold_standard: "input_data/gold_standard_drugs.txt"
+  approved_drugs: "input_data/approved_drugs.txt"
+  acgs: "processed_data/ACGs.txt"
+  rmgs: "processed_data/RMGs.txt"
+  rwr_input: "processed_data/rwr_input.txt"
+  rwr_network: "processed_data/rwr_network.txt"
+  rwr_drug_targets: "processed_data/rwr_drug_targets.txt"
+  pss_output: "output/pss_scores.txt"
+  ranked_drugs: "output/drug_rankings.txt"
+  evaluation_result: "output/auroc_result.txt"
+  rwr_per_drug_dir: "output/random_walk_result"
+  mechanisms_dir: "output/mechanisms"
+  rwr_seeds_used: "processed_data/rwr_seeds_used.tsv"
+  gsea_dir: "gene_set_enrichment_analysis"
+  gsea_dir_degs: "gene_set_enrichment_analysis/DEGs"
+  gsea_dir_rmgs: "gene_set_enrichment_analysis/RMGs"
+  gsea_dir_mechanisms: "gene_set_enrichment_analysis/drug_mechanisms"
+rwr:
+  restart_prob: 0.7
+  convergence_threshold: 0.00001
+  max_iter: 100
+  seed_total_mass: 30
+analysis:
+  gene_option: "RMGs"               # "RMGs" or "DEGs"
+  enable_mechanism_prediction: true
+  top_drugs: 20
+  top_rmgs: 50
+  enrichment:
+    enabled: true
+    gene_set: "GO_Biological_Process_2025"

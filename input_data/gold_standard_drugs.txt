@@ -1,4 +1,4 @@
-Given sensitizer	Targets
+DrugName	TargetGene
 Metformin	PRKAB1
 Arsenic trioxide	IKBKB|TXNRD1|JUN|CCND1|MAPK3|MAPK1|AKT1|CDKN1A|HDAC1|PML
 mTOR inhibitor	MTOR
