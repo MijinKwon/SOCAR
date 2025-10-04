@@ -1,6 +1,6 @@
 # SOCAR (Sensitizers to Overcome CAncer drug Resistance)
 SOCAR is a reproducible Python pipeline that identifies potential sensitizer drugs by integrating transcriptomic alterations with a curated molecular interaction network.  
-It implements the framework described in the manuscript *“SOCAR: Network-based computational framework to overcome acquired tamoxifen resistance of MCF7 cells.”*
+It implements the framework described in the manuscript *“SOCAR: Network-based computational framework to overcome acquired tamoxifen resistance of MCF7 cells.”* (DOI: [TBD])
 
 ## Manuscript
 SOCAR: Network-based computational framework to overcome acquired tamoxifen resistance of MCF7 cells  
@@ -134,9 +134,9 @@ During execution, `processed_data/`, `output/`, and `logs/` are created automati
 - Mechanism analysis: for top-ranked drugs, selects top `analysis.top_rmgs` RMGs by per-drug RWR score, writes `output/mechanisms/<Drug>_top_RMGs.tsv`, and runs GO enrichment into `gene_set_enrichment_analysis/drug_mechanisms/<Drug>/`.
 
 Notes
-- If `gseapy` is not installed, enrichment steps are skipped with a log message.
-- Nodes with no outgoing edges are handled by a tiny epsilon in row sums to avoid division-by-zero.
-- All inputs must use HGNC-approved gene symbols and be tab-delimited.
+> - If `gseapy` is not installed, enrichment steps are skipped with a log message.
+> - Nodes with no outgoing edges are handled by a tiny epsilon in row sums to avoid division-by-zero.
+> - All inputs must use HGNC-approved gene symbols and be tab-delimited.
 
 ## Input Formats and Data Sources
 - Schema: `input_schema.md`
@@ -149,7 +149,16 @@ Due to database redistribution policies, only sample input files are included in
 Full datasets are publicly available and can be downloaded as described in `input_data/DATA_SOURCES.md`.  
 Place the full versions under `input_data/` with the same filenames to reproduce the full results.
 
-## License
-This code is provided for academic research use only.  
-For commercial or redistribution inquiries, please contact the corresponding author.
+## Reproducibility and Citation
 
+This repository provides all materials to reproduce the results reported in the manuscript:
+
+> *Kwon, M. et al. (2025). SOCAR: Network-based computational framework to overcome acquired tamoxifen resistance of MCF7 cells.*
+
+- [Reproducibility Guide](REPRODUCIBILITY.md) — Step-by-step instructions to reproduce the main results (AUROC ≈ 0.93).
+- [CITATION.cff](CITATION.cff) — Metadata for citation and reference (recognized by GitHub’s “Cite this repository” feature).
+
+If you use this framework in your research, please cite the manuscript and this repository.
+
+## License
+This project is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
